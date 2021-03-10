@@ -1,17 +1,19 @@
 import React from "react";
+import PersonList from './PersonList'
 
 
-function employeeDirectory() {
+function Directory() {
     return(  
         <div className="container">
         <div className="jumbotron">
             <h1>Employee Directory</h1>
             <p>Add Text Here!</p>
             <p></p>
+            <PersonList  />
         </div>
     </div>
      )
  
 }
 
-export default employeeDirectory;
+export default Directory;
