@@ -1,13 +1,19 @@
 import React from "react";
 import API from "../utils/API"; // using the API
 import { Table } from 'reactstrap';
+import '../utils/style.css';
 
 
 //Class -  setting state (data that I want to render)
 export default class PersonList extends React.Component {
     state = {
         users: [], //setting as an array. It's how we'll receive the data
-       
+
+        // use this to display only users per name enter in the search box
+        usersToDisplay: [],
+
+        sort: "asc"
+
     };
 
     componentDidMount() {
@@ -17,18 +23,22 @@ export default class PersonList extends React.Component {
     //Using API to get data 
     api = () => {
         API.ramdomEmployees().then(res => {
-            this.setState({ users: res.data.results })// using setState to change USERS at the state level
+            this.setState({ users: res.data.results });// using setState to change USERS at the state level
+
+            // setting second API respond to display only search box input
+            this.setState({ usersToDisplay: res.data.results });
             console.log(res);
         })
 
     }
 
-//Filter by name when a name is enter. 
-  employeeFilterOnChange = (event) => {
-            console.log("input", event.target.user)
-            this.setState({ 
-                users: event.target.user})
-        }
+    //Filter by name when a name is enter. 
+    // employeeFilterOnChange = (event) => {
+    //     console.log("input", event.target);
+    //     // use .filter on the users state
+    //     // get only the employees that match the value the user has typed in
+    //     // set usersToDisplay state
+    //   };
 
     //Rendering data
     //this = reference to state
@@ -37,6 +47,7 @@ export default class PersonList extends React.Component {
         const users = this.state.users;
         console.log('user', this.state.users)
 
+    
         //accessing array of data and displaying each employeey information
 
         const usersMap = users.map((user, index) => {
@@ -53,24 +64,18 @@ export default class PersonList extends React.Component {
             )
         })
 
-      
-
+ 
         return (
-
             <div>
-                <div>
-                <label htmlFor="search"> Search by Name</label>
-                <input type="text" value={this.users} onChange={this.employeeFilterOnChange}></input>
-                </div>
-
+           
             <Table striped>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Picture</th>
-                        <th>Name</th>
-                        <th>Gender</th>
-                        <th>Email</th>
+                        <th value="id">ID</th>
+                        <th value="picture">Picture</th>
+                        <th value="name">Name</th>
+                        <th value="gender">Gender</th>
+                        <th value="email">Email</th>
                     </tr>
                 </thead>
                 <tbody>

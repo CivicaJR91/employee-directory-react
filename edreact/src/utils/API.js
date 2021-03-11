@@ -2,7 +2,7 @@ import axios from "axios";
 
 //URL API
 
-export const APIURL = "https://randomuser.me/api/?results=3&inc=picture,name,gender,email";
+export const APIURL = "https://randomuser.me/api/?results=15&inc=picture,name,gender,email";
 
 
 //API Calling Fucntion
