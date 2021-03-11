@@ -4,15 +4,12 @@ import { Table } from 'reactstrap';
 import '../utils/style.css';
 
 
+
+
 //Class -  setting state (data that I want to render)
 export default class PersonList extends React.Component {
     state = {
-        users: [], //setting as an array. It's how we'll receive the data
-
-        // use this to display only users per name enter in the search box
-        usersToDisplay: [],
-
-        sort: "asc"
+        users: [], //setting as an array. It's how we'll receive the data 
 
     };
 
@@ -31,14 +28,6 @@ export default class PersonList extends React.Component {
         })
 
     }
-
-    //Filter by name when a name is enter. 
-    // employeeFilterOnChange = (event) => {
-    //     console.log("input", event.target);
-    //     // use .filter on the users state
-    //     // get only the employees that match the value the user has typed in
-    //     // set usersToDisplay state
-    //   };
 
     //Rendering data
     //this = reference to state
