@@ -1,6 +1,6 @@
 import React from "react";
 import PersonList from './PersonList'
-import Search from './Search'
+
 import '../utils/style.css';
 
 
@@ -11,15 +11,14 @@ function Directory() {
         <div className="container">
         <div className="jumbotron">
             <h1>Employee Directory</h1>
+            <p> Search An Employee</p>
         </div>
-        <div>
-            <Search />
-        </div>
-
-        <div>
+    
+        
+    </div>
+    <div>
             <PersonList  />
             </div>
-    </div>
     </div>
      )
  
