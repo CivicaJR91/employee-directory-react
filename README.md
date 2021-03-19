@@ -15,4 +15,7 @@ Note: The application only display up to 15 employeer. If you want to display ad
 This application uses React and others NPM Packages. Once you fork the application please install NPM.
 
 # Screenshots
-[! screenshot](./image/empdirec.png)
+![screenshot](./image/empdirec.png)
+
+# Application Link:
+(like http://www.github.com/)
